@@ -1,0 +1,79 @@
+@import './Globals.scss';
+
+.all-pickers-wrap {
+	position: fixed;
+  z-index: 3;
+	background-color: var(--cardBG);
+	color: var(--cardText);
+	overflow-x: hidden;
+
+  //width: 380px;
+	max-width: $pickerWidth;
+	
+	
+	left: calc((100vw - $pickerWidth) / 2);
+	top: calc((100vh - var(--pickerHeight)) / 2);
+
+	@media screen and (max-width: 600px) {
+		top: 60px;
+		bottom: 60px;
+
+		max-height: calc(100vh - 70px - 70px);
+		overflow-y: scroll;
+	}
+
+	@media screen and (min-width: 601px) and (max-height: calc(var(--pickerHeight) + 60px)) {
+		top: calc(30px);
+		max-height: calc(100vh - 60px);
+		overflow-y: scroll;
+	}
+
+  @media screen and (max-width: $toggleMobile) {
+		left: 30px;
+    max-width: calc(100vw - $mBrdOff);
+  }
+
+	padding: 10px;
+	.all-pickers {
+		display: flex;
+		flex-wrap: wrap;
+
+		.header {
+			width: 100%;
+			margin-top: 5px;
+			text-align: center;
+		}
+
+		.side-pickers {
+			display: flex;
+			flex-direction: column;
+			max-width: 360px;
+      @media screen and (max-width: $toggleMobile) {
+        max-width: calc(100vw - $mBigOff);
+      }
+			max-height: 395px;
+
+			.previews {
+				display: flex;
+				flex-direction: row;
+				align-self: center;
+			}
+
+			.filler {
+				flex-grow: 1;
+			}
+
+			.actions {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+
+				button {
+					flex-grow: 1;
+					padding: 5px;
+					margin: 5px;
+				}
+			}
+		}
+	}
+}

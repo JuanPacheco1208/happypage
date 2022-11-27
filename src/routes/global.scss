@@ -1,0 +1,75 @@
+@import '$lib/globals';
+
+* {
+	box-sizing: border-box;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+html {
+	overflow: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	main.content {
+		width: 100%;
+		min-height: 100vh;
+		height: 100%;
+		background: var(--bg);
+		color: var(--text);
+    
+		font-family: 'Times New Roman', 'MS PGothic', Osaka, Times, serif;
+		button,
+		input {
+			font-family: 'Times New Roman', 'MS PGothic', Osaka, Times, serif;
+		}
+
+		div.content-wrapper {
+			min-height: 100vh;
+      max-height: 100vh;
+      overflow: scroll;
+			display: flex;
+			flex-direction: column;
+
+			a {
+				color: var(--text);
+			}
+
+			padding: 30px;
+			overflow: scroll;
+
+			@media screen and (max-width: $mobile) {
+				&.sidebar-a {
+					padding-top: calc(70px + 30px);
+					height: calc(100% - 70px);
+				}
+
+				&.sidebar-b {
+					padding-bottom: calc(70px + 30px);
+					height: calc(100% - 70px);
+				}
+			}
+
+			@media screen and (min-width: $noMobile) {
+				&.sidebar-a {
+					margin-left: 200px;
+					width: calc(100% - 200px);
+				}
+
+				&.sidebar-b {
+					margin-right: 200px;
+				width: calc(100% - 200px);
+				}
+			}
+
+			&.fixed {
+        overflow: hidden;
+      }
+		}
+	}
+}

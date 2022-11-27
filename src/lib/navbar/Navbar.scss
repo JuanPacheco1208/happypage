@@ -1,0 +1,94 @@
+@import '$lib/globals';
+
+nav.navbar {
+	display: flex;
+	position: fixed;
+	z-index: 2;
+	flex-direction: column;
+	background: linear-gradient(to bottom, var(--navbarBG1), var(--navbarBG2));
+
+	@media screen and (max-width: $mobile) {
+		width: 100%;
+		min-height: 70px;
+		max-height: 100vh;
+		overflow-y: scroll;
+
+		&.sidebar-a {
+			top: 0;
+			.header-wrapper > .spin {
+				transform: rotate(180deg);
+			}
+			&.alt-bg {
+				background: linear-gradient(to bottom, var(--navbarBG1), #00000000);
+			}
+		}
+
+		&.sidebar-b {
+			bottom: 0;
+			.header-wrapper > .navbar-toggle {
+				transform: rotate(180deg);
+				&.spin {
+					transform: rotate(360deg);
+				}
+			}
+			&.alt-bg {
+				background: linear-gradient(to top, var(--navbarBG1), #00000000);
+			}
+		}
+
+		&.rainbow-bg {
+			background: linear-gradient(to right, #800, #880, #080, #088, #008, #808, #800);
+		}
+
+		&.rainbow-alt {
+			background: linear-gradient(to right, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+		}
+	}
+
+	@media screen and (min-width: $noMobile) {
+		padding-top: 20px;
+		width: 200px;
+		height: 100%;
+
+		&.sidebar-a {
+			left: 0;
+			&.alt-bg {
+				background: linear-gradient(to right, var(--navbarBG1), #00000000);
+			}
+		}
+
+		&.sidebar-b {
+			right: 0;
+			&.alt-bg {
+				background: linear-gradient(to left, var(--navbarBG1), #00000000);
+			}
+		}
+
+		&.rainbow-bg {
+			background: linear-gradient(to top, #800, #880, #080, #088, #008, #808, #800);
+		}
+
+		&.rainbow-alt {
+			background: linear-gradient(to top, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+		}
+	}
+	overflow-y: scroll;
+
+	.header-wrapper {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		align-self: center;
+
+		.navbar-toggle {
+			padding: 10px;
+			position: absolute;
+			transition: transform 0.4s;
+			user-select: none;
+			color: var(--navbar-text);
+			left: 0;
+			text-decoration: none;
+			color: var(--navbarText);
+		}
+	}
+}

@@ -1,0 +1,29 @@
+{
+	"themes": [
+		"smilie_lavender",
+		"smilie_coffee",
+		"purple_marble",
+		"dark_marble",
+		"owl",
+		"plum_owl",
+		"purple_owl",
+		"lavender",
+		"salmon",
+		"panda",
+		"hot_pink",
+		"deep_sea"
+	],
+	"langs": ["en", "sl", "es", "fr", "de", "pl", "mk", "tp", "jb"],
+	"themeProps": [
+		"navbarBG1",
+		"navbarBG2",
+		"navbarText",
+		"navbarAccent",
+		"accent",
+		"bg",
+		"text",
+		"cardBG",
+		"cardText",
+		"cardAccent"
+	]
+}
